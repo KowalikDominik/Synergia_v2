@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Synergia responsywna</title>
+	<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		font-family: tahoma;
+		
+
+	}
+		.tlo{
+			width: 100%;
+			height: 471px;
+			position: absolute;
+			top: 0;
+			background:url("images/tlo_calosci2.jpg") no-repeat center center;
+			background-size: 100% 100%;
+			z-index: 0;
+		}
+
+		.container{
+			width: 900px;
+			margin: 0 auto;
+
+			}
+			.gora{
+				margin-top: 100px;
+				margin-left: 10px;
+				margin-bottom: 10px;
+				height: 50px;
+				display: flex;
+				position: relative;
+			}
+
+			.menu{
+				width:100%;
+				height: 100%;
+				margin-left: 60px;
+				position: relative;
+				z-index: 3000;
+			}
+			.menu_grafika{
+				position: fixed;
+				top: 55px;
+				left: 50%;
+				margin-left: -260px;
+				width: 710px;
+				height: 172px;
+				background-image: url("images/grafika_przy_menu.png");
+				z-index: 200;
+			}
+			.slider{
+				width: 100%;
+
+
+			}
+			.tlo_slider{
+				width: 100%;
+				border-radius: 12px 12px 0 0;
+			}
+			.motto{
+				position: absolute;
+				top:40px;
+				right:20px;
+				color: #fff;
+				text-shadow: 0px 0px 10px #000;
+			}
+			.kwiatek_gorny img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 10;
+				border-radius: 12px;
+			}
+			.kwiatek_dolny{
+				width: 273px;
+				height: 224px;
+				position: absolute;
+				bottom: -40px;
+				right: -40px;
+				background: url("images/kwiatek_dolny.png");
+				
+			}
+			.ramka{
+				position: relative;
+				z-index: 2;
+				width: 100%;	
+				border: 3px #fff solid;
+				border-radius: 15px;
+				box-shadow:0 0 6px black;
+			}
+			.content{
+				width: 100%;
+				font-size: 10pt;
+			}
+			#startowa{
+
+				width: 100%;
+				height: 240px;
+				display: flex;
+	 			
+			}
+			#startowa > *{
+				padding: 10px;
+			}
+			#kontakt{
+				/*flex-grow: 1;*/
+				flex-grow: 1;
+				background: linear-gradient(#80B7D5 85%, #2987BD 100%);
+				text-align: left;
+				border-radius: 0 0 0 12px;
+				order: 1;
+
+			}
+			.numery{
+				font-size: 18pt;
+				width: auto;
+			}
+			#wiadomosci_mini{
+				flex-grow: 1;
+				background: linear-gradient(#fff 85%, #D0CECF 100%);
+				order: 2;
+			}
+			#skrot{
+				min-width: 300px;
+				flex-grow: 1;
+				background: linear-gradient(#DD0200 85%, #B10707 100%);
+				font-size: 12pt;
+				font-weight: bold;
+				color: #FFB86E;
+				border-radius: 0 0 12px 0;
+				order: 3;
+				}
+			.footer{
+				position: relative;
+				top:-20px;
+				width: 100%;
+				height: 40px;
+				border: 3px #fff solid ;
+				border-radius: 10px;
+				box-shadow:0 0 6px black;
+				background: #DADADA;
+			}
+			.podpis{
+				width: 200px;
+				position: absolute;
+				bottom: 2px;
+				left:50%;
+				margin-left: -100px;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.naglowek, .naglowek h1{
+				font-family: impact;
+				font-size: 22pt;
+				font-weight: 100;
+				margin: 0;
+				white-space: nowrap;
+			}
+			.skrot{color:#fff;}
+			.kontakt_home{color: #616161;}
+			.wiadomosc{color:#b5b7b9;}
+			.ikona{
+				float: left;
+				margin-right: 10px;
+			}
+			.wiecej{
+				width: 43px;
+				background-color: #D81010;
+				background-image: url("images/strzala.png");
+				background-repeat: no-repeat;
+				font-size: 10pt;
+				display: flex;
+				color: #fff;
+				position:relative;
+				left:100%;
+				margin-left: -60px;
+				padding-left: 18px;
+				}
+			.wiecej a {
+				text-decoration: none;
+				color: #fff;
+			}
+		p{
+			margin-bottom: 8px;
+			margin-top: 8px;
+		}
+		a{
+			text-decoration: none;
+		}
+		img {
+			max-width: 100%;
+		    height: auto;
+		    margin-bottom: -3px;
+}
+      ol {
+ 
+
+      	position: absolute;
+      	bottom: 0;
+        list-style-type: none;
+        padding: 0; 
+        margin: 0;
+        font-size: 15px;
+		height:30px;
+        line-height: 2em;
+        text-align: center;
+
+      }
+
+      /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+      ol a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        padding: 0 12px;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol */
+      ol > li {
+        float: left;
+        margin-right: 3px;
+		border-radius: 6px;
+		background: #f6f6f6;
+		box-shadow: inset -4px -4px 5px -4px rgba(0,0,0,0.26);
+
+      }
+
+      /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > a {
+        color: #fff;
+      }
+
+      /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > ul {
+        display: block;
+      }
+		
+      /* CZĘŚĆ-ROZWIJANA-MENU*/
+
+      /* wygląd głównych rozwijanych elementów - ul */
+      ol > li > ul {
+        display: none;
+        list-style-type: none;
+        padding: 0;
+      }
+	
+      /* wygląd elementu - a - w części rozwijanej */
+      ol > li > ul > li > a {
+        color: #f6f6f6;
+
+      }
+      /*  ostatni element rozwijanego menu zaokraglony od dołu */
+	  ol > li > ul > li:last-child {
+		border-radius: 0 0 5px 5px;
+	  }
+      /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+      ol > li > ul > li:hover {
+        background-color: #f6f6f6;
+      }
+	 
+      /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+      ol > li > ul > li:hover > a {
+        color: #000;
+      
+      }
+      #menu-button{
+      	width: 80%;
+      	height: 100%;
+      	background: url("images/menu.png");
+      	background-size: contain;
+      	background-position: center; 
+      	background-repeat: no-repeat;
+      	display: none;
+      }
+      .glowna{
+		position: relative;top: -30px;height: 60px;      }
+      .glowna:hover{
+		background: #6FB717;
+      }
+      .onas:hover{
+      	background: #D60101;
+      }
+      .statut:hover{
+      	background: #1BA0D1;
+      }
+      .oferta:hover{
+      	background: #F5ED08;
+      }
+
+      .wspolpraca:hover{
+      	background: #FF8707;
+      }
+      .aktualnosci:hover{
+      	background: #AD01DE;
+      }
+      .projekty:hover{
+      	background: #F7098F;
+      }
+      .kontakt:hover{
+      	background: #C0C0C2;
+      }
+      @media (max-width:910px) {
+      	#menu{
+      		position: absolute;
+      		top: 100px;
+      		left: 0px;
+      		display: none;
+      	}
+      	#menu li {
+      		border-radius: 0;
+      		width: 100%;
+      		padding: 2% 0;}
+
+     	#menu-button {
+     		display: block;
+     	}
+
+ 		#startowa {
+		display: block;
+	  }
+	  .container{
+	  	width: 100%;
+	  }
+	  .tlo_slider{
+	  	border-radius: 0;
+	  }
+	  .menu_grafika, .kwiatek_gorny, .kwiatek_dolny, ol{
+	  	display: none;
+	  }
+	  .motto{
+	  	top:10px;
+	  	left: 10px;
+
+	  }
+	  .ramka {
+	  	border:0;
+		border-top:3px #fff solid;
+		border-radius: 0;
+		box-shadow: 6px black;
+	  }
+	  .gora{
+	  	margin-top: 10px; 
+	  }
+	  #kontakt{
+	  	text-align:center;
+	  	border-radius: 0;
+	  }
+	  #kontakt{
+	  	order:3;
+	  }
+	  #wiadomosci_mini{
+	  	order:2;
+	  }
+	  #skrot{
+	  	border-radius: 0;
+	  	order: 1;
+	  }
+	  .footer{
+	  	display: none;
+	  }
+}
+	 @media (max-width:650px) {
+		.motto{
+			font-size: 15pt;
+		}
+	 }
+	</style>
+</head>
+<body>
+<div class="tlo"></div>
+	<div class="container">
+		<div class="gora">
+		<img src="images/logo.png">
+		<div class="menu_grafika"></div>
+		<div class="menu">
+			<div id="menu-button" onclick="openNav()"></div>
+			<ol id="menu">
+			    <li class="glowna"><a href="#glowna">Strona<br>Główna</a></li>
+		
+			    <li class="onas"><a href="#">O nas</a></li>
+
+			    <li class="statut"><a href="#">Statut</a></li>
+			    			    
+			    <li class="oferta"><a href="#">Oferta</a></li>
+
+			    <li class="wspolpraca"><a href="#">Wspópraca</a>
+			      <ul>
+			        <li><a href="#">Partnerzy</a></li>
+			        <li><a href="#">Darczyńcy</a></li>
+			        <li><a href="#">Sponsorzy</a></li>
+			      </ul>
+			    </li>
+
+			    <li class="aktualnosci"><a href="#">Aktualności</a></li>
+
+			    <li class="projekty"><a href="#">Projekty</a></li>
+
+			    <li class="kontakt"><a href="#">Kontakt</a></li>
+
+			</ol>
+  		</div>
+		
+		</div>
+		<div class="ramka">
+			<div class="slider">
+ 			<img class="tlo_slider" src="images/tlo_srodek.gif">
+			<div class="motto naglowek">Dopóki macie czas dobro czyńcie.<br><i>św. Paweł</i></div>
+			<div class="kwiatek_gorny"><img src="images/kwiatek_gorny.png"></div>
+			</div>
+			<div class="content">
+				<div id="startowa">
+		
+					<div id="skrot"><h1 class="naglowek skrot">O stowarzyszeniu</h1><p style="z-index:300;"> Jakkolwiek określilibyśmy pomaganie innym - dobroczynnością, filantropią, charytatywnością czy samarytanizmem, to bezwzględnie uznać musimy fakt, iż niesienie pomocy innym daje prawo do osobistej satysfakcji
+i spełnienia.</p>
+					</div>
+					<div id="wiadomosci_mini">
+						<img src="images/wiadomosc.png" class="ikona">
+						<h1 class="naglowek wiadomosc">Aktualności</h1>
+						<p> 24 lipiec 2009</p>
+						<p>Począwszy od czerwca 2008 do marca 2009 roku stowarzyszenie koncentrowało swoje działania na wewnętrznej organizacji. W kwietniu 2009r. stowarzyszenie przystąpiło do otwartego konkursu ofert na wspieranie w 2009 roku realizacji zadań z zakresu „Programu działań na rzecz niepełnosprawnych mieszkańców miasta Lublin w latach 2008-2013”...</p>
+						<div class="wiecej"><a href=""> Więcej</a></div>
+					</div>
+						<div id="kontakt">
+					<div class="naglowek">
+						<h1 class="kontakt_home">
+							Kontakt telefoniczny:
+						</h1>
+							<span style="color: #fff;">
+								<div class="numery">
+									<img src="images/telefon.png">&nbsp;&nbsp;&nbsp;&nbsp;<small>+081 </small> 441 75 79<br>
+									<img src="images/ikona_tel_cell.png">&nbsp;&nbsp;<small>+48</small> 502 038 053<br>
+								</div>
+								<center>
+								<span class="kontakt_home">E-mail:</span>
+								<br><a href=""><small style="font-size: 15pt;color: #fff;">stowarzyszenie<span style="color:#4B790C">synergia</span>@<span style="color:#4B790C">op.pl</span></small></a>
+								</center>
+							</span>
+						
+					</div>	
+					</div>
+				</div>
+				<div class="kwiatek_dolny"></div>
+			</div>
+			
+		</div>
+		<div class="footer"><span class="podpis"> Stowarzyszenie Synergia</div>
+	</div>
+
+
+</div>
+<script type="text/javascript">
+  		function openNav(){
+  			var element = document.getElementById("menu").style;
+  			 if(element.display=="block"){element.display="none";}
+  			 	else element.display="block";
+  		}
+</script>
+
+</body>
+</html>
