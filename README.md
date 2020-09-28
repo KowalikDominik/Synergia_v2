@@ -1,4 +1,2 @@
-# Synergia_v2
-Wersja responsywna strony stowarzyszenia<br>
-grafiki przerobione na elementy css(cienie, zaokrąglenia, gradienty)<br>
+# Strona stowarzyszenia_v2
 adres podglądowy: http://kowalik.vipserv.pl/stara_re
